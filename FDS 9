@@ -1,0 +1,99 @@
+A palindrome is a string of character that‘s the same forward and backward. Typically, 
+punctuation, capitalization, and spaces are ignored. For example, “Poor Dan is in a droop” is 
+a palindrome, as can be seen by examining the characters “poor danisina droop” and 
+observing that they are the same forward and backward. One way to check for a palindrome 
+is to reverse the characters in the string and then compare with them the original-in a 
+palindrome, the sequence will be identical. Write C++ program with functions- 
+a) To print original string followed by reversed string using stack 
+b) To check whether given string is palindrome or not 
+
+#include <iostream>
+#include <string>
+#define MAX 100
+using namespace std;
+
+class Stack {
+public:
+    int top;
+    string a;
+    char s[MAX];
+    char p[MAX];
+
+    Stack() {
+        top = -1;
+        a = "move";
+        cout << "\nInitially string are=" << a;
+    }
+
+    bool isEmpty() {
+        return (top == -1);
+    }
+
+    bool isFull() {
+        return (top == MAX - 1);
+    }
+
+    void display();
+    void push();
+    void pop();
+    void comparison();
+};
+
+void Stack::display() {
+    cout << "Stack elements: ";
+    for (int i = 0; i <= top; i++) {
+        cout << s[i] << " ";
+    }
+    cout << endl;
+}
+
+void Stack::push() {
+    if (isFull()) {
+        cout << "\nStack is full";
+    } else {
+        for (int i = 0; i < a.length() && top < MAX - 1; i++) {
+            top++;
+            s[top] = a[i];
+        }
+    }
+}
+
+void Stack::pop() {
+    if (isEmpty()) {
+        cout << "\nStack is empty";
+    } else {
+        int r = top;
+        cout << "\nReverse string: ";
+        while (r >= 0) {
+            p[r] = s[r];
+            cout << p[r];
+            r--;
+        }
+    }
+}
+
+void Stack::comparison() {
+    int f = 1;
+    int r = top;
+    for (int i = r; i >= 0; i--) {
+        if (s[i] != p[i]) {
+            f = 0;
+            break;
+        }
+    }
+    if (f == 1) {
+        cout << "\nstring is palindroam";
+    } else {
+        cout << "\nstring is not palindrome";
+    }
+    cout << endl;
+}
+
+int main() {
+    Stack ob;
+    ob.push();
+   // ob.display();
+    ob.pop();
+    ob.comparison();
+    return 0;
+}
