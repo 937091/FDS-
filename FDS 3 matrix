@@ -1,63 +1,66 @@
-
 Write a Python program to compute following computation on matrix:
 a) Addition of two matrices B) Subtraction of two matrices
 c) Multiplication of two matrices d) Transpose of a matrix
 
 m1=[]
-r1=int(input("enter the no of rows in matrix 1"))
-c1=int(input("enter the no of clo in matrix 1"))
+r1=int(input("enter the no of rows in matrix 1="))
+c1=int(input("enter the no of col in matrix 1= "))
 for i in range (r1):
     a=[]
-    print (f'enter the row{i+1}  element by giving space')
+    print (f'enter the row {i+1}  element by giving space=')
     x=input().split()
     for j in range (c1):
-        #print (f'enter the row{i+0}  elament by giving space')
-        #x=input().split()
         a.append(int(x[j]))
     m1.append(a)
-    print("matrix 1 ",m1)
+    print(m1)
+    
+    
 m2=[]
-r2=int(input("enter the no of rows in matrix 2"))
-c2=int(input("enter the no of col in matrix 2"))
-for i in range (r2):
-    a=[]
-    print (f'enter the row{i+1}  elament by giving space')
-    x=input().split()
+r2=int(input("enter the no of rows in matrix 2="))
+c2=int(input("enter the no of col in matrix 2="))
+for j in range (r2):
+    b=[]
+    print (f'enter the row {j+1}  element by giving space=')
+    z=input().split()
     for j in range (c2):
-       # print (f'enter the row{i+0}  elament by giving space')
-       # x=input().split()
-        a.append(int(x[j]))
-    m2.append(a)
-    print("matrix 2",m2)
+      b.append(int(z[j]))
+    m2.append(b)
+    print(m2)
+    
+    
 m=[]
-if r1==r1 and c1==2 :
-    for i in range (r1):
+for i in range (r1):
         c=[]
         for j in range (c1):
             
             e=m1[i][j]+m2[i][j]
             c.append(int(e))
         m.append(c)
-    print("add=",m)
+print('addition of matrix=')    
+print(m)
+    
+    
 m=[]
-if r1==r1 and c1==2 :
-    for i in range (r1):
+for i in range (r1):
         c=[]
         for j in range (c1):
             
             e=m1[i][j]-m2[i][j]
             c.append(int(e))
         m.append(c)
-    print("sub=",m)
-print("transpose")
+print('subtraction of matrix=')    
+print(m)
+    
+    
 m=[]
 for i in range (r1):
        c=[]
        for j in range (c1):
             
-            a=m1[j][i]
-            c.append(int(a))
+            e=m1[j][i]
+            c.append(int(e))
        m.append(c)
+print('traspose of matix 1=')       
 print(m)
 m=[]
 
@@ -65,9 +68,10 @@ for i in range (r1):
    c=[]
    for j in range (c1):
             
-     f=m2[j][i]
-     c.append(int(f))
+     e=m2[j][i]
+     c.append(int(e))
    m.append(c)
+print('traspose of matix 2=')  
 print(m)
 r=[]
 
@@ -80,4 +84,7 @@ for i in range (r1):
             z=z+m1[i][k]*m2[k][j]
         b.append(int((z)))
     r.append(b)
-print("multiplication",r)
+print('matrix multiplication=')    
+print(r)
+
+
